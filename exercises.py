@@ -69,6 +69,11 @@ class Game:
         if all(space is not None for space in self.board.values()) and self.winner is None:
             self.tie = True
 
-            
+
+    def switch_turn(self):
+        turn_lookup = {'X': 'O', 'O': 'X'}
+        self.turn = turn_lookup[self.turn]
+
+
 game_instance = Game()
 game_instance.play_game()
