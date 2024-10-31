@@ -11,7 +11,20 @@ class Game:
 
     def play_game(self):
         print("Welcome to Tic Tac Toe!")
-        print("The game is ready to begin.")    
+        print("The game is ready to begin.")
+        self.print_board()    
+
+
+    def print_board(self):
+        b = self.board
+        print(f"""
+            A   B   C
+        1)  {b['a1'] or ' '} | {b['b1'] or ' '} | {b['c1'] or ' '}
+            ----------
+        2)  {b['a2'] or ' '} | {b['b2'] or ' '} | {b['c2'] or ' '}
+            ----------
+        3)  {b['a3'] or ' '} | {b['b3'] or ' '} | {b['c3'] or ' '}
+        """)
 
 
 
