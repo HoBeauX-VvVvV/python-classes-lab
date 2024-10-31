@@ -40,6 +40,15 @@ class Game:
         self.print_board()
         self.print_message()
 
-        
+
+    def get_move(self):
+        while True:
+            move = input("Enter a valid move (example: A1): ").lower()
+            if move in self.board and self.board[move] is None:
+                return move
+            else:
+                print("Invalid move! Please choose an empty space on the board.")
+
+    
 game_instance = Game()
 game_instance.play_game()
