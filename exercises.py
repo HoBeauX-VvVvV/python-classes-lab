@@ -65,5 +65,10 @@ class Game:
         return False
 
 
+    def check_for_tie(self):
+        if all(space is not None for space in self.board.values()) and self.winner is None:
+            self.tie = True
+
+            
 game_instance = Game()
 game_instance.play_game()
