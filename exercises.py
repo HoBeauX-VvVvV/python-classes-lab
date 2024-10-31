@@ -14,6 +14,17 @@ class Game:
         print("The game is ready to begin.")
         self.print_board()    
 
+        while not self.winner and not self.tie:
+                move = self.get_move()
+                self.board[move] = self.turn  
+                self.render()  
+               
+                if self.check_for_winner() or self.check_for_tie():
+                    self.render()  
+                    break
+                
+                self.switch_turn()
+
 
     def print_board(self):
         b = self.board
